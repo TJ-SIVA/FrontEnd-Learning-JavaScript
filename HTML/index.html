@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>buttons</title>
+
+        <style>
+            p.{
+
+                margin-bottom: 10px;
+                font-size: 20px;
+
+            }
+
+            .add,.buy{
+
+                color: black;
+                background-color: yellow;
+                border: none;
+                padding: 10px 16px;
+                border-radius: 8px;
+                transition: 0.15 all;
+            }
+
+            .buy{
+
+                background-color: orangered;
+            }
+
+            .add:hover,.buy:hover{
+                opacity: 0.80;
+            }
+
+            .add:active,.buy:active{
+
+                transform: translateY(-2px);
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <section>
+                <p> Adults Plain Cotton T-shirt</p>
+                <p> Price: &dollar;7.99</p>
+                <button class="add" onclick=" alert('add to cart');"> Add to cart </button>
+                <button  onclick=" console.log('loding'); alert('Purchased');" class="buy"> buy now </button>
+            </section>
+        </main>
+
+    </body>
+</html>
