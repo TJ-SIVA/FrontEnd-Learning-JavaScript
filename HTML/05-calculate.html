@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title> Calculate </title>
+        <link rel="stylesheet" href="/Styles/calculate.css">
+    </head>
+
+    <body>
+        <div class="main-grid">
+            <div class="line-grid">
+                <button class="num-btn" onclick=" calculation+= '1'"> 1 </button>
+                <button class="num-btn" onclick=" calculation+= '2'"> 2 </button>
+                <button class="num-btn" onclick=" calculation+= '3'"> 3 </button>
+                <button class="num-btn" onclick=" calculation+= ' + '"> + </button>
+            </div>
+
+            <div class="line-grid">
+                <button class="num-btn" onclick=" calculation+= '4'"> 4 </button>
+                <button class="num-btn" onclick=" calculation+= '5'"> 5 </button>
+                <button class="num-btn" onclick=" calculation+= '6'"> 6 </button>
+                <button class="num-btn" onclick=" calculation+= ' - '"> - </button>
+
+            </div>
+
+            <div class="line-grid">
+                <button class="num-btn"> 7 </button>
+                <button class="num-btn"> 8 </button>
+                <button class="num-btn"> 9 </button>
+                <button class="num-btn"  onclick=" calculation+= ' * '"> * </button>
+            </div>
+
+            <div class="line-grid">
+                <button class="num-btn"> 0 </button>
+                <button class="num-btn"  onclick=" calculation+= ' / '"> / </button>
+                <button class="num-btn" onclick=" calculation+= ' % '"> % </button>
+                <button class="num-btn" onclick="
+                    let value = eval(calculation);
+                    console.log(value);
+                "> = </button>
+            </div>
+
+
+        </div>
+
+        <script>
+            let calculation = ''
+        </script>
+        
+    </body>
+</html>
