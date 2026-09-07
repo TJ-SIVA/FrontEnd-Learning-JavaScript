@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> coin flip</title>
+
+        <style>
+
+            .guess-btn{
+                color: white;
+                background-color: olivedrab;
+                padding: 10px 16px;
+                margin: 4px;
+                border: none;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+
+    <body>
+        
+        <button class="guess-btn" onclick=" userGuess = 'head';
+            if( outcome === userGuess){
+
+                console.log('you are Correct');
+            }
+
+            else{
+
+                console.log('Not this time buddy');
+            }
+            
+        "> Head </button>
+        <button class="guess-btn" onclick=" userGuess = 'tails';
+            if( outcome === userGuess){
+
+                console.log('you are Correct');
+            }
+
+            else{
+
+                console.log('Not this time buddy');
+            }
+        "> Tails </button>
+
+        <script>
+
+            const value = Math.random();
+
+            let outcome = ( value > 0.5 ? 'tails':'head');
+
+            let userGuess ='';
+
+
+            
+        </script>
+    </body>
+</html>

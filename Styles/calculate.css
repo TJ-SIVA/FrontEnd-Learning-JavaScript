@@ -1,13 +1,23 @@
 .main-grid{
     display: inline-block;
-    padding: 10px 20px;
+    height: 200px;
+    width: 200px;
+    padding: 10px 10px;
     border: solid;
     border-width: 2px;
     border-color: lightgray;
     background-color: rgb(239, 239, 219);
 }
 
+.line-grid{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .num-btn{
+
+    flex:1;
 
     padding: 10px 16px;
     border: none;
