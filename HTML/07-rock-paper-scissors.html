@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Rock Paper Scissors</title>
+        
+    </head>
+
+    <body>
+
+        <div class="btns-layout">
+            <button class="btns" onclick="
+                playGame('Rock');
+                ">Rock</button>
+            <button class="btns" onclick="
+                playGame('Paper');
+            ">Paper</button>
+            <button class="btns" onclick="
+                playGame('Scissors');
+            ">Scissors</button>
+        </div>
+
+        <script>
+            function playGame(playerMove){
+                const computerMove = pickComputerMove();
+                if (playerMove === computerMove){
+
+                    alert(`you choose ${playerMove} and computer choose ${computerMove}. "Tie"`);
+                }
+
+                else if( (playerMove === 'Rock' && computerMove === 'Scissors') ||
+                         (playerMove === 'Scissors' && computerMove === 'Paper') ||
+                        (playerMove === 'Paper' && computerMove === 'Rock') ){
+
+                           alert(`you choose ${playerMove} and computer choose ${computerMove}. "You Win"`);
+
+                }
+
+                else{
+
+                    alert(`you choose ${playerMove} and computer choose ${computerMove}. "You Lose"`);
+                }
+            }
+
+            function pickComputerMove(){
+                
+
+                const value = Math.random();
+
+                if (value >= 0 && value < 1/3){
+
+                    return 'Rock';
+                }
+
+                else if(value >= 1/3 && value< 2/3){
+                    
+                    return 'Paper';
+                }
+
+                else{
+
+                    return 'Scissors'
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,2 +1,7 @@
-const name = 10;
-alert(name);
+function name(){
+
+    console.log("hello")
+
+    name();
+
+}
