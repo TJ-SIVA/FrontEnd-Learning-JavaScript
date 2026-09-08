@@ -2,6 +2,8 @@ function name(){
 
     console.log("hello")
 
-    name();
+    if (df){
+        
+        name();
 
 }
