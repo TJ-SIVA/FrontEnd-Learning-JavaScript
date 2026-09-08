@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Objects</title>
+    </head>
+    <body>
+        <P> Objects</P>
+        <script>
+
+            const cars ={
+
+                name: 'bolero',
+                price: 200,
+                features : 'disel-engine'
+            }
+
+            console.log(cars);
+            console.log(cars.name);
+            console.log(cars.price);
+            console.log(cars.features);
+
+            // i can add the new property
+
+            cars.capacity = '5 people';
+
+            console.log(cars)
+
+            delete cars.features;
+            console.log(cars);
+
+            const object1 = {
+
+                name : 'ford',
+                Country : 'Deutsch',
+                'engine-model': 'bs6',
+                specfication:{
+
+                    engine:'liquied cool',
+                    capacity: 5
+                },
+
+                method : function price(){
+
+                    return "affordable";
+                }
+            }
+
+            console.log(object1.name);
+            console.log(object1['engine-model']);
+            console.log(object1.specfication);
+            console.log(object1.specfication.engine);
+            console.log(object1.method());
+
+
+            josn = JSON.stringify(object1)
+            console.log(josn)
+
+            console.log(JSON.parse(josn))
+            
+        </script>
+    </body>
+</html>
