@@ -18,11 +18,16 @@
             <button class="btns" onclick="
                 playGame('Scissors');
             ">Scissors</button>
+            <button class="btns" onclick="
+
+            localStorage.removeItem('score');
+
+            "> Restore </button>
         </div>
 
         <script>
 
-            const score = {
+            const score = JSON.parse(localStorage.getItem('score')) || {
 
                 Win : 0,
                 Lose : 0,
@@ -34,6 +39,7 @@
                 if (playerMove === computerMove){
 
                     score.Tie +=1;
+                     localStorage.setItem('score',JSON.stringify(score));
                     alert(`you choose ${playerMove} and computer choose ${computerMove}. "Tie" 
                             Wins: ${score.Win} Losses:${score.Lose} Ties:${score.Tie}`);
                 }
@@ -44,6 +50,8 @@
 
                             score.Win +=1;
 
+                            localStorage.setItem('score',JSON.stringify(score));
+
                            alert(`you choose ${playerMove} and computer choose ${computerMove}. "You Win"
                                      Wins: ${score.Win} Losses:${score.Lose} Ties:${score.Tie}`);
 
@@ -51,8 +59,10 @@
 
                 else{
                      score.Lose +=1
+                    localStorage.setItem('score',JSON.stringify(score));
                     alert(`you choose ${playerMove} and computer choose ${computerMove}. "You Lose"
                              Wins: ${score.Win} Losses:${score.Lose} Ties:${score.Tie}`);
+
                 }
             }
 
