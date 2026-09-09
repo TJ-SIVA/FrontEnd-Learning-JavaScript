@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> coin flip</title>
+
+        <style>
+
+            .guess-btn{
+                color: white;
+                background-color: olivedrab;
+                padding: 10px 16px;
+                margin: 4px;
+                border: none;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+
+    <body>
+        
+        <button class="guess-btn" onclick=" userGuess(outcome(),'heads');"> Head </button>
+        <button class="guess-btn" onclick="  userGuess(outcome(),'tails');"> Tails </button>
+        <button class="guess-btn" onclick=" localStorage.removeItem('score'); location.reload()"> Reset Profile </button>
+
+        <script>
+
+            const score = JSON.parse(localStorage.getItem('score')) || {
+
+                wins : 0,
+                losess: 0,
+            }
+            function outcome(){
+                const value = Math.random();
+
+                return( value > 0.5 ? 'tails':'heads');
+            }
+            function userGuess(outcome,userGuess){
+
+                if( outcome === userGuess){
+                    score.wins += 1
+                    console.log('you are Correct');
+                    console.log(score)
+            }
+
+            else{
+                score.losess +=1
+                console.log('Not this time buddy');
+                console.log(score)
+            }
+
+             localStorage.setItem('score',JSON.stringify(score))
+
+
+            }
+
+
+            
+        </script>
+    </body>
+</html>
