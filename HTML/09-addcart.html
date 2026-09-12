@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>buttons</title>
+
+        <style>
+            p{
+
+                margin-bottom: 10px;
+                font-size: 20px;
+
+            }
+
+            .numbers{
+
+                padding: 4px 5px;
+                border: none;
+                color: azure;
+                background-color: black;
+                border-radius: 4px;
+                 transition: 0.15 all;
+            }
+
+            .add,.buy{
+
+                color: black;
+                background-color: yellow;
+                border: none;
+                padding: 10px 16px;
+                border-radius: 8px;
+                transition: 0.15 all;
+            }
+
+            .buy{
+
+                background-color: orangered;
+            }
+
+            .add:hover,.buy:hover ,.numbers:hover{
+                opacity: 0.80;
+            }
+
+            .add:active,.buy:active ,.numbers:active{
+
+                transform: translateY(-2px);
+            }
+
+            .add-buttons, .remove-buttons{
+
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <main>
+            <section>
+                <p> Adults Plain Cotton T-shirt</p>
+                <p> Price: &dollar;7.99</p>
+
+                <div class="add-buttons"></div>
+                    <button class="add" onclick=" addcart(1);">Add to cart </button>
+                    <button class="numbers" onclick=" addcart(2);"> +2 </button>
+                    <button class="numbers" onclick=" addcart(3);"> +3 </button>
+                    <button class="numbers" onclick=" addcart(4);"> +4 </button>
+                    <button class="numbers" onclick=" addcart(5);"> +5 </button>
+                </div>
+
+                <div class="remove-buttons">
+
+                    <button class="add" onclick="removecart(1)"> remove </button>
+
+                        <button class="numbers" onclick="removecart(2)"> -2 </button>
+                        <button class="numbers" onclick="removecart(3)"> -3 </button>
+                        <button class="numbers" onclick="removecart(4)"> -4 </button>
+                        <button class="numbers" onclick="removecart(5)"> -5 </button>
+                </div>
+               
+                <p class="js-cartQuantity"></p>
+                <p class="js-errorMessage"></p>
+                <button  onclick=" removecart(cartQuantity);" class="buy"> Empty cart </button>
+
+
+            </section>
+        </main>
+
+        <script>
+            let cartQuantity = 0;
+            function addcart(count){
+
+                if (cartQuantity < 10){
+
+                    if(cartQuantity + count <= 10){
+
+                    cartQuantity += count;
+                    displayCart(cartQuantity);
+                    console.log(`The item added Cart Quantity ${cartQuantity}`)}
+
+                    else {
+                        errorMeassage(`you can only add ${10-cartQuantity} items.`);
+                        console.log(`you can only add ${10-cartQuantity} items.`);
+
+                    }
+                }
+
+                else{
+                    errorMeassage("The Carts is full");
+                    console.log("The Carts is full");
+                }
+            }
+            
+            function removecart(count){
+
+ 
+                if (cartQuantity > 0){
+
+                    if(cartQuantity - count >= 0){
+
+                    cartQuantity -= count;
+                    displayCart(cartQuantity);
+                    console.log(`The item removed Cart Quantity ${cartQuantity}`);
+                }
+
+                    else {
+                        errorMeassage(`you can only remove ${cartQuantity} items.`);
+                        console.log(`you can only remove ${cartQuantity} items.`);
+
+                    }
+                }
+
+                else{
+                    errorMeassage("The Carts is empty already")
+                    console.log("The Carts is empty already");
+                }
+            }
+
+            function displayCart(value){
+
+                document.querySelector(".js-cartQuantity").innerHTML = "Cart Quantity:" + String(value);
+
+
+            }
+
+            function errorMeassage(text){
+
+                document.querySelector(".js-errorMessage").innerHTML = text;
+            }
+        </script>
+    </body>
+</html>

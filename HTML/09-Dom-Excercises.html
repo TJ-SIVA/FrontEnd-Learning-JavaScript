@@ -10,6 +10,9 @@
        <input type="text" placeholder="Name" id="name" name="name-box" class="js-input" onkeydown="handle(event);">
        <button class="js-submit" onclick="show();"> Submit </button>
        <p class="js-name"></p>
+
+       <input type="text" onkeyup="display(event);" class="js-show">
+       <p class="js-display"></p>
         <script>
             console.log(document.querySelector("button"));
             document.querySelector('.js-second-button').textContent = '9b done';
@@ -21,7 +24,14 @@
                     show()
                 }
             }
-            
+            function display(event){
+
+                const value = document.querySelector('.js-show').value
+
+                document.querySelector(".js-display").innerHTML = value
+
+
+            }
             function show(){
 
             const value = document.querySelector('.js-input');
