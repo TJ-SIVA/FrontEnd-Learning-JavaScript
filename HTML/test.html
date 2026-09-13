@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>variable</title>
-    </head>
-    <body>
-        <P> Varible excersise</P>
-        <script>
-            function name(){
+<head>
+  <title>DOM Challenge</title>
+  <style>
+    .active {
+      background-color: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
 
-    console.log("hello")
+  <button id="gamingBtn">Gaming</button>
+  <button id="musicBtn">Music</button>
 
-    name();
+  <p id="result"></p>
 
-}
+  <script>
+    const gamingBtn = document.getElementById('gamingBtn');
+    const musicBtn = document.getElementById('musicBtn');
+    const result = document.getElementById('result');
 
-name();
-        
-        </script>
-    </body>
+    gamingBtn.onclick = function() {
+      gamingBtn.classList.add('active');
+      musicBtn.classList.remove('active');
+      result.textContent = "Selected: Gaming";
+    };
+
+    musicBtn.onclick = function() {
+      musicBtn.classList.add('active');
+      gamingBtn.classList.remove('active');
+      result.textContent = "Selected: Music";
+    };
+  </script>
+
+</body>
 </html>
