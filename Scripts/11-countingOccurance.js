@@ -1,10 +1,10 @@
 function countWords(words){
 
-    const items = {};
+    let items = {};
 
-    for(let i; i < words.length;i++){
-        items[words[i]];
-        items.words[i] = (items.words[i] || 0) + 1;
+    for(let i = 0; i < words.length; i++){
+        let word = words[i];
+        items[word]= (items[word] || 0) + 1;
     }
 
     console.log(items);
