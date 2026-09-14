@@ -17,21 +17,15 @@
   <p id="result"></p>
 
   <script>
-    const gamingBtn = document.getElementById('gamingBtn');
-    const musicBtn = document.getElementById('musicBtn');
-    const result = document.getElementById('result');
-
-    gamingBtn.onclick = function() {
-      gamingBtn.classList.add('active');
-      musicBtn.classList.remove('active');
-      result.textContent = "Selected: Gaming";
+    const object1 = {
+      name:'hi',
+      city:'hello'
     };
 
-    musicBtn.onclick = function() {
-      musicBtn.classList.add('active');
-      gamingBtn.classList.remove('active');
-      result.textContent = "Selected: Music";
-    };
+   object1['phone']
+   object1.phone = ( object1.phone || 0 ) + 1;
+   
+   console.log(object1)
   </script>
 
 </body>
